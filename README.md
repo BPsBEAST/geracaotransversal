@@ -144,3 +144,8 @@ individual tenha uma acreditação DGERT independente. A identidade visual
 Moodle refere-se à plataforma de apoio e não a uma certificação.
 
 O formulário continua a depender da ativação do serviço externo FormSubmit.
+
+
+## Formações financiadas realizadas
+
+O histórico de edições realizadas é gerido no array `financedHistory` em `assets/js/data.js` (código UFCD, nome, horas, início e fim no formato `AAAA-MM`). Cada entrada corresponde a uma edição. Quando o mês de conclusão é desconhecido, mantenha `end: null`. A página `formacoes/financiada.html` gera automaticamente os cartões por ano.
