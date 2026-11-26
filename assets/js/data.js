@@ -46,6 +46,20 @@ window.GT = {
     { title:'Ambiente, Segurança, Higiene e Saúde no Trabalho', code:'UFCD 0349', duration:'25 horas' },
     { title:'Saúde Mental na 3.ª Idade', code:'UFCD 3553', duration:'25 horas' }
   ],
+  // Histórico das ações de formação financiada já realizadas.
+  // Datas no formato AAAA-MM: foram fornecidos apenas mês e ano.
+  // Cada linha representa uma edição, mesmo quando a UFCD se repete.
+  financedHistory: [
+    { code:'5745', title:'Inglês Técnico', hours:50, start:'2026-05', end:'2026-05' },
+    { code:'3564', title:'Primeiros Socorros', hours:25, start:'2026-03', end:'2026-03' },
+    { code:'0404', title:'Organização Pessoal e Gestão do Tempo', hours:25, start:'2026-01', end:'2026-01' },
+    { code:'3127', title:'Prevenção de Incêndios Florestais', hours:50, start:'2026-01', end:'2026-02' },
+    { code:'6521', title:'Operações Essenciais de Extinção de Incêndios Florestais', hours:25, start:'2026-04', end:'2026-04' },
+    { code:'3553', title:'Saúde Mental na 3.ª Idade', hours:25, start:'2025-07', end:'2025-08' },
+    { code:'0349', title:'Ambiente, Segurança, Higiene e Saúde no Trabalho', hours:25, start:'2025-06', end:'2025-07' },
+    { code:'0404', title:'Organização Pessoal e Gestão do Tempo', hours:25, start:'2025-05', end:'2025-06' },
+    { code:'0404', title:'Organização Pessoal e Gestão do Tempo', hours:25, start:'2025-02', end:null }
+  ],
   faq: [
     { question:'Que formações posso encontrar na Geração Transversal?', answer:'Disponibilizamos formação nas áreas de Saúde, Trabalho Social e Orientação, e Proteção de Pessoas e Bens. Na área INEM, a oferta apresentada inclui SBV, SBVDAE, SBVP, TAT, TAS e ações de recertificação.' },
     { question:'A Geração Transversal é uma entidade certificada?', answer:'A Geração Transversal possui certificação DGERT nas áreas 729, 762 e 861 e apresenta acreditação INEM para formação em emergência médica. Pode consultar mais informações na página de Certificações.' },
