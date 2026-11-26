@@ -96,6 +96,51 @@
     financedList.innerHTML = GT.financed.map(item => `<li><div><small>${item.code}</small><strong>${item.title}</strong></div><span>${item.duration}</span></li>`).join('');
   }
 
+  // Histórico de formações financiadas: fonte única em data.js, agrupado por ano.
+  // Usamos textContent para mostrar os dados sem interpretar HTML como código.
+  const historyContainer = document.querySelector('[data-funded-history]');
+  if (historyContainer) {
+    const editions = [...(GT.financedHistory || [])].sort((a, b) => b.start.localeCompare(a.start));
+    const formatMonth = value => {
+      const [year, month] = value.split('-').map(Number);
+      return new Intl.DateTimeFormat('pt-PT', { month: 'long', year: 'numeric' }).format(new Date(year, month - 1, 1));
+    };
+    const node = (tag, className, value) => {
+      const el = document.createElement(tag);
+      if (className) el.className = className;
+      if (value !== undefined) el.textContent = value;
+      return el;
+    };
+    const uniqueCourses = new Set(editions.map(item => item.code)).size;
+    const summary = document.querySelector('[data-funded-summary]');
+    if (summary) {
+      summary.textContent = `${editions.length} edições realizadas · ${uniqueCourses} UFCD distintas`;
+    }
+    const years = [...new Set(editions.map(item => item.start.slice(0, 4)))];
+    years.forEach(year => {
+      const yearEditions = editions.filter(item => item.start.startsWith(year));
+      const group = node('section', 'funded-history-year');
+      const heading = node('div', 'funded-history-year-heading');
+      heading.append(node('h3', '', year), node('span', '', `${yearEditions.length} ${yearEditions.length === 1 ? 'edição' : 'edições'}`));
+      const grid = node('div', 'funded-history-grid');
+      yearEditions.forEach(item => {
+        const card = node('article', 'funded-history-card');
+        const top = node('div', 'funded-history-card-top');
+        top.append(node('span', 'funded-history-code', `UFCD ${item.code}`), node('span', 'funded-history-hours', `${item.hours}h`));
+        const title = node('h4', '', item.title);
+        const period = node('p', 'funded-history-period');
+        const label = item.end
+          ? (item.end === item.start ? formatMonth(item.start) : `${formatMonth(item.start)} — ${formatMonth(item.end)}`)
+          : `${formatMonth(item.start)} · data de conclusão não indicada`;
+        period.append(node('span', 'funded-history-calendar', '▦'), node('span', '', label));
+        card.append(top, title, period);
+        grid.appendChild(card);
+      });
+      group.append(heading, grid);
+      historyContainer.appendChild(group);
+    });
+  }
+
   const trainingSelect = document.getElementById('training-select');
   if (trainingSelect) {
     const options = GT.courses.map(item => new Option(`${item.title} (${item.short})`, item.short));
