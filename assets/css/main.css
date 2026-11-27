@@ -240,3 +240,27 @@ h1,h2,h3,h4,p{margin-top:0}h1,h2,h3,h4{line-height:1.12;letter-spacing:-.045em}h
 @media(max-width:900px){.funded-history-intro{align-items:flex-start;flex-direction:column;gap:20px}.funded-history-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.funded-history-grid{grid-template-columns:1fr}.funded-history-card{min-height:0;padding:24px}.funded-history-cta{padding:27px 23px;align-items:stretch;flex-direction:column}.funded-history-cta .btn{width:100%}.funded-history-summary{font-size:.78rem}.funded-history-year-heading h3{font-size:1.5rem}}
 @media(prefers-reduced-motion:reduce){.funded-history-card{transition:none}.funded-history-card:hover{transform:none}}
+
+
+/* Oferta DGERT e Moodle — apresentação partilhada entre Homepage e áreas certificadas */
+.dgert-home-promo{display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;margin-top:30px;padding:23px 28px;border:1px solid #f0dddc;border-radius:17px;background:#fff7f6}
+.dgert-home-promo-content{display:flex;align-items:center;gap:21px;flex:1 1 420px;min-width:0}
+.dgert-home-promo-icon{flex:0 0 78px;width:78px;height:78px;display:grid;place-items:center;background:#fff;border:1px solid #f2e4df;border-radius:16px}
+.dgert-home-promo-icon img{width:63px;height:63px;object-fit:contain}
+.dgert-home-promo-content strong{display:block;color:var(--ink);font-size:1.05rem;line-height:1.35}
+.dgert-home-promo-content p{margin:5px 0 0;font-size:.9rem;line-height:1.7}
+.dgert-home-promo .btn{flex:none}
+.dgert-learning-panel{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(270px,.65fr);gap:44px;align-items:center;padding:47px;margin-top:35px;border:1px solid #f1dfd7;border-radius:24px;background:radial-gradient(circle at 95% 0%,#ffeedb 0,transparent 38%),linear-gradient(115deg,#fff8f7 0%,#fff 70%)}
+.dgert-learning-copy h3{max-width:730px;font-size:clamp(1.9rem,3.3vw,3rem);line-height:1.16;letter-spacing:-.043em;margin:12px 0 20px}
+.dgert-learning-copy p{font-size:.92rem;line-height:1.82;max-width:720px;margin:0 0 14px}
+.dgert-learning-copy p strong{color:var(--ink);font-weight:760}
+.dgert-learning-tags{display:flex;gap:8px;flex-wrap:wrap;list-style:none;padding:0;margin:20px 0 25px}
+.dgert-learning-tags span{padding:9px 13px;border:1px solid #eddcd9;background:#fff;border-radius:100px;color:var(--red);font-size:.75rem;font-weight:780}
+.dgert-learning-brand{align-self:stretch;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:27px 24px;border:1px solid #f4e3d8;border-radius:20px;background:#fff;box-shadow:0 17px 37px rgba(48,34,32,.045)}
+.dgert-learning-brand-kicker{font-size:.66rem;font-weight:850;letter-spacing:.13em;color:var(--red)}
+.dgert-learning-logo{display:grid;place-items:center;width:157px;height:157px;border-radius:32px;background:#fff8f1;margin:20px auto 8px}
+.dgert-learning-logo img{width:123px;height:123px;object-fit:contain;filter:drop-shadow(0 7px 10px rgba(96,68,31,.08))}
+.dgert-learning-brand>strong{font-size:2rem;color:#24272d;letter-spacing:-.04em}
+.dgert-learning-brand p{font-size:.82rem;line-height:1.7;margin:10px 0 0;max-width:255px}
+@media(max-width:900px){.dgert-learning-panel{grid-template-columns:1fr;gap:28px;padding:33px}.dgert-learning-brand{padding:26px}}
+@media(max-width:560px){.dgert-learning-panel{padding:23px;gap:23px}.dgert-learning-copy h3{font-size:clamp(1.95rem,8vw,2.4rem)}.dgert-learning-brand{padding:19px}.dgert-home-promo{padding:21px}.dgert-home-promo-content{align-items:flex-start;gap:14px}.dgert-home-promo-icon{flex-basis:58px;width:58px;height:58px}.dgert-home-promo-icon img{width:46px;height:46px}.dgert-home-promo .btn{width:100%}}
